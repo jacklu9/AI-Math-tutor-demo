@@ -507,10 +507,10 @@ function SupportStage({ selected, onBack, onStartOver }) {
           left: <MathPreviewInput value={studentWork} onChange={setStudentWork} label="My work so far" placeholder="Type your idea, your current line, or the step where you are blocked." helper="You can type work or upload a photo." />,
           messages: [
             { role: "user", text: studentWork || "$\\int \\frac{x^2+2x+3}{x(x+1)} \\, dx = \\int \\left(1+\\frac{3}{x}-\\frac{2}{x+1}\\right) \\, dx$" },
-            { role: "assistant", text: "This setup is ready for the integration step. The partial fraction decomposition is already complete, so now you can integrate each term separately." },
-            { role: "assistant", text: "Split it term by term:\n$$\\int \\left(1+\\frac{3}{x}-\\frac{2}{x+1}\\right) dx = \\int 1 \\, dx + 3\\int \\frac{1}{x} \\, dx - 2\\int \\frac{1}{x+1} \\, dx$$" },
-            { role: "assistant", text: "Use these formulas:\n$$\\int 1 \\, dx = x + C, \\quad \\int \\frac{1}{x} \\, dx = \\ln|x| + C, \\quad \\int \\frac{1}{x+a} \\, dx = \\ln|x+a| + C$$" },
-            { role: "assistant", text: "So your next line can be:\n$$x + 3\\ln|x| - 2\\ln|x+1| + C$$" },
+            { role: "assistant", text: "Your algebra looks fine, so the place you may be stuck is the antiderivative rules rather than the decomposition." },
+            { role: "assistant", text: "Hint: in your rewritten integral, focus on the terms that look like $\\frac{1}{x}$ and $\\frac{1}{x+1}$." },
+            { role: "assistant", text: "A key formula to recall is:\n$$\\int \\frac{1}{x} \\, dx = \\ln|x| + C$$" },
+            { role: "assistant", text: "Now ask yourself: what similar logarithm rule should apply to $\\frac{1}{x+1}$?" },
           ]
         };
       case "example":
