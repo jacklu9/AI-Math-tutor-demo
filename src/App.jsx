@@ -664,7 +664,7 @@ export default function App() {
 
   const stageStatus = {
     upload: "Current step: add or check the problem.",
-    analyze: "Current step: preparing learning support.",
+    analyze: "Current step: starting tutor support.",
     options: "Current step: choose the help type that matches your state.",
     support: "Current step: use guided help, change help type, or start over.",
   }[stage];
